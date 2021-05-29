@@ -9,15 +9,19 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] Animation animLeft;
     public int Health = 10;
     [SerializeField] Text _healthText;
+    public static GameObject Player;
+    public GameObject projectile;
+    public GameObject projectilesspawner;
 
     void Start()
     {
-
+        
     }
 
 
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             animRight.Play("RightAttack");
@@ -28,6 +32,9 @@ public class Player_Controller : MonoBehaviour
             Shot();
         }
         _healthText.text = Health.ToString();
+        if (Health <= 0) { 
+        
+        }
     }
     void OnCollisionEnter(Collision col)
     {
@@ -35,9 +42,12 @@ public class Player_Controller : MonoBehaviour
             Health--;
         }
     }
-    public void Shot() { 
-    
+    public void Shot() {
+        GameObject bullet = Instantiate(projectile, projectilesspawner.transform.position, Quaternion.identity) as GameObject;
+        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+        Destroy(bullet, 5f);
     }
+
 }
  
 

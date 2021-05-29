@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class EnemiesController : MonoBehaviour
 {
-    public GameObject Player;
+    
     [SerializeField] int MoveSpeed = 4;
     [SerializeField] Animation animMelee;
-    public int Damage = 1;
-    public int Health = 2;
-
+    public int helth = 2;
+    public int damage = 1;
+    EnemiesController newEnemy;
+    private GameObject player;
     void Start()
     {
         
     }
 
-    
+
     void Update()
     {
-        transform.LookAt(Player.transform);
-        if (Vector3.Distance(transform.position, Player.transform.position) >= 3f) {
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        player = GameObject.Find("FPSController");
+        transform.LookAt(player.transform.position);
+        if (Vector3.Distance(transform.position, player.transform.position) >= 4) {
+                transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+                Debug.Log("Namierzam");
+            }
+        else if (Vector3.Distance(transform.position, player.transform.position) < 4) {
+                animMelee.Play("Enemy_attack");
+                Debug.Log("atakuje");
+            
         }
         
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 3f) {
-            animMelee.Play("Enemy_attack");
-        }
-        if (Health <= 0) {
+        if (helth <= 0) {
             Destroy(gameObject);
+            ArenaController.Enemies--;
         }
 
     }
@@ -35,9 +41,12 @@ public class EnemiesController : MonoBehaviour
     {
         if (col.gameObject.tag == "Attack")
         {
-            Health--;
+            helth--;
         }
-      
+
     }
+   
+  
+  
     
 }
