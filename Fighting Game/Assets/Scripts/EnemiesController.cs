@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class EnemiesController : MonoBehaviour
 {
-    
-    [SerializeField] int MoveSpeed = 4;
+
+    [SerializeField] int MoveSpeed;
     [SerializeField] Animation animMelee;
-    public int helth = 2;
-    public int damage = 1;
+    public int helth;
+    public int damage;
     EnemiesController newEnemy;
     private GameObject player;
     void Start()
     {
-        
+        MoveSpeed = 4;
+        helth = 2;
+        damage = 1;
     }
 
 
@@ -39,9 +41,29 @@ public class EnemiesController : MonoBehaviour
     }
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Attack")
+        if (Player_Controller.Oneshot)
         {
-            helth--;
+            if (col.gameObject.tag == "Attack")
+            {
+                helth = -1;
+            }
+            if (col.gameObject.tag == "PlayerBullet")
+            {
+                helth = -1;
+                Destroy(col.gameObject);
+            }
+        }
+        else
+        {
+            if (col.gameObject.tag == "Attack")
+            {
+                helth--;
+            }
+            if (col.gameObject.tag == "PlayerBullet")
+            {
+                helth--;
+                Destroy(col.gameObject);
+            }
         }
 
     }

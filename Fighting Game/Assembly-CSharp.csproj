@@ -59,12 +59,13 @@
     <Compile Include="Assets\Assets_lib\IL3DN\Scripts\IL3DN_ChangeWalkingSound.cs" />
     <Compile Include="Assets\Scripts\RightHandScript.cs" />
     <Compile Include="Assets\Scripts\EnemiesController.cs" />
+    <Compile Include="Assets\Scripts\EnemyRanger.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Assets_lib\IL3DN\Scripts\IL3DN_SimpleMouseLook.cs" />
     <Compile Include="Assets\Assets_lib\IL3DN\Scripts\IL3DN_SimpleFPSController.cs" />
     <Compile Include="Assets\Scripts\ArenaController.cs" />
     <Compile Include="Assets\Scripts\Player_Controller.cs" />
-    <Compile Include="Assets\Scripts\EnemyRanger.cs" />
+    <Compile Include="Assets\Scripts\NewScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

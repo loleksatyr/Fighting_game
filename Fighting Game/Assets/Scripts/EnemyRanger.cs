@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class EnemyRanger : MonoBehaviour
 {
-    [SerializeField] int MoveSpeed = 4;
+    [SerializeField] int MoveSpeed;
     [SerializeField] Animation animRanger;
-    public int helth = 1;
-    public int damage = 2;
+    public int helth;
+    public int damage;
     public GameObject projectile;
     public GameObject projectilesspawner;
-    [SerializeField] private float cooldown = 5;
+    [SerializeField] private float cooldown;
     private float cooldownTimer;
 
     private GameObject player;
     void Start()
     {
-
+        MoveSpeed = 4;
+        helth = 1;
+        damage = 2;
+        cooldown = 5;
     }
 
 
@@ -49,9 +52,29 @@ public class EnemyRanger : MonoBehaviour
     }
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Attack")
+        if (Player_Controller.Oneshot)
         {
-            helth--;
+            if (col.gameObject.tag == "Attack")
+            {
+                helth = -1;
+            }
+            if (col.gameObject.tag == "PlayerBullet")
+            {
+                helth = -1;
+                Destroy(col.gameObject);
+            }
+        }
+        else
+        {
+            if (col.gameObject.tag == "Attack")
+            {
+                helth--;
+            }
+            if (col.gameObject.tag == "PlayerBullet")
+            {
+                helth--;
+                Destroy(col.gameObject);
+            }
         }
 
     }
