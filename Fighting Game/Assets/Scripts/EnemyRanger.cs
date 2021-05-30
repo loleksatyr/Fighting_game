@@ -27,13 +27,14 @@ public class EnemyRanger : MonoBehaviour
     {
         player = GameObject.Find("FPSController");
         transform.LookAt(player.transform.position);
-        if (Vector3.Distance(transform.position, player.transform.position) >= 40)
+        if (Vector3.Distance(transform.position, player.transform.position) >= 80)
         {
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             Debug.Log("Namierzam");
         }
-        else if (Vector3.Distance(transform.position, player.transform.position) < 40)
-        {    
+        else if (Vector3.Distance(transform.position, player.transform.position) < 80)
+        {
+        transform.position -= transform.forward * MoveSpeed * Time.deltaTime;
         cooldownTimer -= Time.deltaTime;
         if (cooldownTimer > 0) return;
         cooldownTimer = cooldown;

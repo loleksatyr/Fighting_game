@@ -1,4 +1,3 @@
-using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +12,7 @@ public class ArenaController : MonoBehaviour
     [SerializeField] GameObject _enemyRangerPrefab;
     bool start = true;
     [SerializeField] GameObject SpawnEnemies;
+    [SerializeField] GameObject SpawnEnemiesRanged;
     [SerializeField] public static int Enemies;
     [SerializeField] GameObject Win;
     [SerializeField] GameObject _healingPrefab;
@@ -36,7 +36,7 @@ public class ArenaController : MonoBehaviour
                 Enemies++;
             }
             for (int i = 0; i < _arenaCounterint; i++) {
-                GameObject.Instantiate(_enemyRangerPrefab, SpawnEnemies.transform.position, Quaternion.identity);
+                GameObject.Instantiate(_enemyRangerPrefab, SpawnEnemiesRanged.transform.position, Quaternion.identity);
                 Enemies++;
             }
             var position = new Vector3(Random.Range(-154.0f, 98.0f), 0, Random.Range(-87.0f, 155.0f));

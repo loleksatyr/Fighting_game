@@ -9,7 +9,6 @@ public class EnemiesController : MonoBehaviour
     [SerializeField] Animation animMelee;
     public int helth;
     public int damage;
-    EnemiesController newEnemy;
     private GameObject player;
     void Start()
     {
@@ -23,14 +22,11 @@ public class EnemiesController : MonoBehaviour
     {
         player = GameObject.Find("FPSController");
         transform.LookAt(player.transform.position);
-        if (Vector3.Distance(transform.position, player.transform.position) >= 4) {
+        if (Vector3.Distance(transform.position, player.transform.position) >= 3) {
                 transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-                Debug.Log("Namierzam");
             }
         else if (Vector3.Distance(transform.position, player.transform.position) < 4) {
                 animMelee.Play("Enemy_attack");
-                Debug.Log("atakuje");
-            
         }
         
         if (helth <= 0) {
