@@ -52,8 +52,8 @@ public class ArenaController : MonoBehaviour
             else {
                 Win.SetActive(true);
                 if (Input.GetKey(KeyCode.Escape)) {
-                    Scene scene = SceneManager.GetActiveScene();
-                    SceneManager.LoadScene(scene.name);
+                    //Scene scene = SceneManager.GetActiveScene();
+                    SceneManager.LoadScene("MainScene");
 
                 }
             }
