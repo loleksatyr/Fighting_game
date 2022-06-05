@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - EnemiesController
     - EnemyRanger
     - IL3DN.IL3DN_SimpleFPSController
+    - MenuController
     - Player_Controller
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.EditorToolbar
@@ -24,11 +25,73 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/MainScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1516}
+    - Class: 114
+      Script: {instanceID: 1986}
+    - Class: 114
+      Script: {instanceID: 2268}
+    - Class: 114
+      Script: {instanceID: 2372}
+    - Class: 114
+      Script: {instanceID: 2508}
+    - Class: 114
+      Script: {instanceID: 2692}
+    - Class: 114
+      Script: {instanceID: 2788}
+    - Class: 114
+      Script: {instanceID: 4210}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -73,25 +136,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1516}
     - Class: 114
-      Script: {instanceID: 1888}
+      Script: {instanceID: 1886}
+    - Class: 114
+      Script: {instanceID: 1984}
     - Class: 114
       Script: {instanceID: 1986}
     - Class: 114
-      Script: {instanceID: 1988}
+      Script: {instanceID: 2268}
     - Class: 114
-      Script: {instanceID: 2272}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 2376}
+      Script: {instanceID: 2508}
     - Class: 114
-      Script: {instanceID: 2512}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2696}
+      Script: {instanceID: 3702}
     - Class: 114
-      Script: {instanceID: 3706}
+      Script: {instanceID: 4120}
     - Class: 114
-      Script: {instanceID: 4126}
-    - Class: 114
-      Script: {instanceID: 4336}
+      Script: {instanceID: 4332}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -603,6 +666,12 @@ ScriptsOnlyBuild:
     className: ArenaController
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuController
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -639,5 +708,6 @@ ScriptsOnlyBuild:
     className: Player_Controller
   platform: 5
   scenePathNames:
+  - Assets/Scenes/MainScene.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Acer/Downloads/Build_Fight/Fighting Game.exe
+  playerPath: C:/Users/czarn/Desktop/Build/Fighting Game.exe

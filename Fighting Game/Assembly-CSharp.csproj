@@ -53,6 +53,7 @@
      <Compile Include="Assets\Assets_lib\IL3DN\Scripts\IL3DN_SimpleMouseLook.cs" />
      <Compile Include="Assets\Assets_lib\IL3DN\Scripts\IL3DN_SimpleFPSController.cs" />
      <Compile Include="Assets\Scripts\ArenaController.cs" />
+     <Compile Include="Assets\Scripts\MenuController.cs" />
      <Compile Include="Assets\Scripts\Player_Controller.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
